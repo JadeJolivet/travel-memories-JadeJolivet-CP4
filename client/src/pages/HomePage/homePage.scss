@@ -28,49 +28,4 @@
       color: $white-color;
     }
   }
-  .bannerText {
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.6
-    ); /* Fond semi-transparent noir pour le texte */
-    padding: 2rem;
-    text-align: center;
-
-    .bannerTextContent {
-      max-width: 800px; /* Ajuster la largeur selon vos besoins */
-      margin: 0 auto;
-      color: $text-color;
-
-      h1 {
-        font-size: 3rem; /* Taille de la police pour le titre */
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.5rem; /* Taille de la police pour le texte */
-        line-height: 2rem; /* Hauteur de ligne pour l'espacement */
-        margin-bottom: 1rem;
-      }
-
-      .button {
-        padding: 1rem;
-        font-family: $title-font;
-        font-size: 1.5rem;
-        border-radius: 1.2rem;
-        background-color: $secondary-color;
-        color: $black-color;
-        cursor: pointer;
-        transition:
-          background-color 0.3s ease,
-          color 0.3s ease;
-
-        &:hover {
-          background-color: $black-color;
-          color: $white-color;
-        }
-      }
-    }
-  }
 }

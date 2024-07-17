@@ -1,0 +1,66 @@
+@import "../../scss/index.scss";
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 3rem;
+
+  .banner,
+  figure.image {
+    max-width: 39.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      margin: 1rem 3rem;
+    }
+
+    .Welcome-text {
+      h1 {
+        font-family: $title-font;
+        color: $text-color;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-family: $text-font;
+        color: $text-color;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .Website-description {
+      h2 {
+        font-family: $title-font;
+        color: $text-color;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style-type: none;
+
+        li {
+          font-family: $text-font;
+          color: $text-color;
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 1rem;
+
+          &:before {
+            content: "•";
+            color: $orange-color;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+          }
+        }
+      }
+    }
+  }
+}
