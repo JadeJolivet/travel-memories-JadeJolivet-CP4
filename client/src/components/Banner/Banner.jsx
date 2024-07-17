@@ -43,7 +43,7 @@ function Banner() {
       </section>
 
       <figure className="image">
-        <img src={mixImg} alt="Boat on see" />
+        <img src={mixImg} alt="Boat on sea" />
       </figure>
     </main>
   );
