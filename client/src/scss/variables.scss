@@ -1,0 +1,25 @@
+$primary-color: #1b1824;
+$secondary-color: #f8d06c;
+$orange-color: #ed9e38;
+$text-color: #fffcf7;
+$white-color: #fffafa;
+$black-color: #232323;
+
+$text-font: "Raleway", sans-serif;
+$title-font: "Poppins", sans-serif;
+
+$mobile-title: 1.4rem;
+$mobile-content: 1rem;
+$desktop-title: 2rem;
+$desktop-content: 1.2rem;
+
+$font-stroke:
+  -0.025rem -0.025rem $black-color,
+  0.025rem -0.025rem $black-color,
+  -0.025rem 0.025rem $black-color,
+  0.025rem 0.025rem $black-color,
+  0.05rem 0.05rem $black-color;
+
+$header-height: 3.9rem;
+
+$nav-mobile-height: 4.3rem;
