@@ -1,0 +1,31 @@
+@import "../../scss/index.scss";
+
+.main-image {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $text-color;
+  font-size: 2rem;
+
+  .button {
+    padding: 1rem;
+    font-family: $title-font;
+    font-size: 1.5rem;
+    border-radius: 1.2rem;
+    background-color: $secondary-color;
+    color: $black-color;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background-color: $black-color;
+      color: $white-color;
+    }
+  }
+}

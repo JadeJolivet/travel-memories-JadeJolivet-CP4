@@ -1,0 +1,86 @@
+@import "../../scss/index.scss";
+
+.NavBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: transparent;
+  padding: 1rem;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .nav-links-center {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 1.5rem;
+
+      li {
+        .active {
+          border-bottom: 2px solid;
+        }
+
+        a {
+          text-decoration: none;
+          color: $white-color;
+          transition: color 0.3s;
+          font-family: $title-font;
+          text-shadow: $font-stroke;
+          font-weight: 600;
+
+          &:hover {
+            color: $orange-color;
+          }
+        }
+      }
+    }
+
+    .nav-links-right {
+      display: flex;
+      gap: 1rem;
+      font-family: $title-font;
+      font-size: 1rem;
+      text-decoration: none;
+      color: $white-color;
+
+      .nav-link.signIn {
+        text-decoration: none;
+        font-family: $title-font;
+        color: $white-color;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $orange-color;
+        }
+      }
+
+      .nav-link.signUp {
+        text-decoration: none;
+        font-family: $title-font;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        background-color: $secondary-color;
+        color: $black-color;
+        cursor: pointer;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+
+        &:hover {
+          background-color: $black-color;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
