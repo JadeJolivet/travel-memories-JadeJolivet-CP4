@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import fetchApi from "./services/api.services";
 
 import App from "./App";
 
 import HomePage from "./pages/HomePage/HomePage";
+
+const baseJournalGalleryUrl = "/api/travelJournals";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +16,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        loader: () => fetchApi(baseJournalGalleryUrl),
       },
       // {
       //   path: "/journal",

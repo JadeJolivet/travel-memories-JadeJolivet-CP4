@@ -1,4 +1,8 @@
-CREATE TABLE `user` (
+CREATE DATABASE IF NOT EXISTS travel_memories;
+
+USE travel_memories;
+
+CREATE TABLE user (
     id INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(150) NOT NULL,
     lastname VARCHAR(150) NOT NULL,
@@ -7,26 +11,29 @@ CREATE TABLE `user` (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE `travelJournal` (
-    id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE travelJournal (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     user_id INT NOT NULL,
     title VARCHAR(255),
     cover_image VARCHAR(255),
     theme VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     qr_code VARCHAR(255),
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES `user`(id)
+    CONSTRAINT fk_travelJournal_user
+        FOREIGN KEY (user_id) 
+        REFERENCES user(id)
 );
 
-CREATE TABLE `travelJournalEntry` (
-    id INT NOT NULL AUTO_INCREMENT,
-    journal_id INT,
+CREATE TABLE travelJournalEntry (
+     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+     journal_id INT NOT NULL,
     image VARCHAR(255),
     description TEXT,
     location VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
-    FOREIGN KEY (journal_id) REFERENCES `travelJournal`(id)
+    CONSTRAINT fk_travelJournalEntry_journal
+        FOREIGN KEY (journal_id) 
+        REFERENCES travelJournal(id)
 );
+
 

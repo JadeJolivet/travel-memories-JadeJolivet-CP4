@@ -12,4 +12,15 @@ html {
 
 body {
   background-color: $primary-color;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
 }
