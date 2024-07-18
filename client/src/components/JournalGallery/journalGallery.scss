@@ -1,8 +1,21 @@
+@import "../../scss/index.scss";
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $text-color;
+}
+
 .journal-list {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .journal-image {
@@ -11,11 +24,13 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .journal-image img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover;
   display: block;
   border-radius: 8px 8px 0 0;
 }
