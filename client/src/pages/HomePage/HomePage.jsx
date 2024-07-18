@@ -1,9 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import "./homePage.scss";
 import mainImg2 from "../../assets/images/mainImg2.jpeg";
 import Banner from "../../components/Banner/Banner";
 import JournalGallery from "../../components/JournalGallery/JournalGallery";
 
 function HomePage() {
+  const journalsData = useLoaderData(); 
   return (
     <main className="homePage">
       <figure
@@ -16,9 +18,10 @@ function HomePage() {
       </figure>
 
       <Banner />
-      <JournalGallery />
+      <JournalGallery journalsData={journalsData} />
     </main>
   );
 }
 
 export default HomePage;
+

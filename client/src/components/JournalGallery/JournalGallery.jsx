@@ -1,15 +1,16 @@
-import { useLoaderData } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./journalGallery.scss";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+function JournalGallery({ journalsData }) {
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-function JournalGallery() {
-  const journalsData = useLoaderData();
+  if (!journalsData || journalsData.length === 0) {
+    return <p>No journals found</p>;
+  }
 
   return (
     <>
-      <h1>Discover the travel journals </h1>
+      <h1>Discover the travel journals</h1>
       <ul className="journal-list">
         {journalsData.map((travelJournal) => (
           <li key={travelJournal.id} className="journal-image">
@@ -24,14 +25,14 @@ function JournalGallery() {
   );
 }
 
-// JournalGallery.propTypes = {
-//   journalsData: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.number.isRequired,
-//       cover_image: PropTypes.string.isRequired,
-//       title: PropTypes.string.isRequired,
-//     })
-//   ).isRequired,
-// };
+JournalGallery.propTypes = {
+  journalsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      cover_image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default JournalGallery;

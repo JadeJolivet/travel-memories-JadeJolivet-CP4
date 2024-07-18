@@ -7,6 +7,7 @@ class TravelJournalRepository extends AbstractRepository {
 
   // The C of CRUD - Create operation
   async create(travelJournal) {
+
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (user_id, title, cover_image, theme, qr_code)
                 VALUES (?, ?, ?, ?, ?)`,

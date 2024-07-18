@@ -8,7 +8,7 @@ const router = express.Router();
 
 const travelJournalsRouter = require("./travelJournals/router");
 
-router.use("travelJournals", travelJournalsRouter);
+router.use("/travelJournals", travelJournalsRouter);
 
 /* ************************************************************************* */
 
