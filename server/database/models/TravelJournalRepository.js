@@ -7,7 +7,6 @@ class TravelJournalRepository extends AbstractRepository {
 
   // The C of CRUD - Create operation
   async create(travelJournal) {
-
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (user_id, title, cover_image, theme, qr_code)
                 VALUES (?, ?, ?, ?, ?)`,
@@ -38,9 +37,30 @@ class TravelJournalRepository extends AbstractRepository {
     return rows;
   }
   // Execute the SQL UPDATE query to update a specific program
-  // Return how many rows were affected
+
+  async update(travelJournal, id) {
+    const [result] = await this.database.query(
+      `UPDATE ${this.table} 
+      SET 
+        title = ?,
+      cover_image = ?,
+      where id = ?`[(travelJournal.title, travelJournal.cover_image, id)]
+    );
+    // Return how many rows were affected
+    return result.affectedRows;
+  }
+
   // The D of CRUD - Delete operation
-  // Execute the SQL DELETE query to delete a specific program
-  // Return how many rows were affected
+  async delete(id) {
+    // Execute the SQL DELETE query to delete a specific record
+    const [result] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id]
+    );
+
+    // Return how many rows were affected
+    return result.affectedRows;
+  }
 }
+
 module.exports = TravelJournalRepository;

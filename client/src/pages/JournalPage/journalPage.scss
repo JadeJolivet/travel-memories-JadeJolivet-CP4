@@ -1,0 +1,16 @@
+@import "../../scss/index.scss";
+
+h1 {
+  display: none;
+}
+
+h2 {
+  text-align: center;
+  color: $text-color;
+  margin-top: 7rem;
+  font-family: $text-font;
+}
+
+.journal-list {
+  margin-top: 5rem;
+}

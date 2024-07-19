@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./journalGallery.scss";
 
 function JournalGallery({ journalsData }) {
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   if (!journalsData || journalsData.length === 0) {
     return <p>No journals found</p>;

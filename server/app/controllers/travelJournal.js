@@ -33,38 +33,42 @@ const read = async (req, res, next) => {
   }
 };
 
-// The E of BREAD - Edit (Update) operation
-// This operation is not yet implemented
+const edit = async (req, res, next) => {
+  const travelJournal = { ...req.body, id: req.params.id };
+  try {
+    await tables.travelJournal.update(travelJournal);
 
-// Extract the item data from the request body
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
 
-// Insert the item into the database
+const add = async (req, res, next) => {
+  const travelJournal = req.body;
+  try {
+    const insertId = await tables.travelJournal.create(travelJournal);
 
-// Respond with HTTP 201 (Created) and the ID of the newly inserted item
+    res.status(201).json({ insertId });
+  } catch (err) {
+    next(err);
+  }
+};
 
-// Pass any errors to the error-handling middleware
+const destroy = async (req, res) => {
+  try {
+    await tables.travelJournal.delete(req.params.id);
 
-// The A of BREAD - Add (Create) operation
+    res.sendStatus(204);
+  } catch (err) {
+    res.sendStatus(500);
+  }
+};
 
-// Extract the item data from the request body
-
-// Insert the item into the database
-
-// Respond with HTTP 201 (Created) and the ID of the newly inserted item
-
-// Pass any errors to the error-handling middleware
-
-// The D of BREAD - Destroy (Delete) operation
-// This operation is not yet implemented
-
-// Delete the program from the database
-
-// Respond with HTTP 204 (No Content)
-
-// Pass any errors to the error-handling middleware
-
-// Ready to export the controller functions
 module.exports = {
   browse,
   read,
+  edit,
+  add,
+  destroy,
 };

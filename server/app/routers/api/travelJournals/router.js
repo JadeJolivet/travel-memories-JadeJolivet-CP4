@@ -10,6 +10,9 @@ const router = express.Router();
 const {
   browse,
   read,
+  edit,
+  add,
+  destroy,
 } = require("../../../controllers/travelJournal");
 
 // Route to get a list of items
@@ -20,10 +23,12 @@ router.get("/:id", read);
 
 // Route to add a new item
 
-// router.put("/:id", edit);
+router.put("/:id", edit);
 
-// // Route to add a new item
-// router.post("", add);
+// Route to add a new item
+router.post("/:id", add);
+
+router.delete("/:id", destroy);
 
 /* ************************************************************************* */
 
